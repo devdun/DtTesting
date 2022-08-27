@@ -7,4 +7,9 @@ public class ToDoXpathContents {
     public static final String ACTIVE_LINK_TEXT= "Active";
     public static final String COMPLETED_LINK_TEXT= "Completed";
     public static final String CLEAR_COMPLETED_LINK_TEXT= "Clear completed";
+    public static final String TODO_LIST_ITEM= "//li//div[@class='view']";
+    public static final String LIST_CHECKBOXES= "//li//input[@type='checkbox']";
+    public static final String EDIT_TODO_ITEM= "//li[@class='todo editing']//input[@class='edit']";
+    public static final String LIST_ITEMS= "//li[@class='todo']//label";
+    public static final String DELETE_ITEM= "//button[@class='destroy']";
 }
