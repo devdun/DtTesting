@@ -8,6 +8,7 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import java.util.LinkedList;
 import java.util.List;
 
 
@@ -31,7 +32,7 @@ public class ToDoPage {
     @FindBy(partialLinkText = ToDoXpathContents.COMPLETED_LINK_TEXT)
     private WebElement completedListBtn;
 
-    @FindBy(partialLinkText = ToDoXpathContents.CLEAR_COMPLETED_LINK_TEXT)
+    @FindBy(xpath = ToDoXpathContents.CLEAR_COMPLETED_LINK_TEXT)
     private WebElement clearCompletedListBtn;
 
     @FindBy(xpath = ToDoXpathContents.ITEM_LEFT_COUNT)
@@ -72,29 +73,61 @@ public class ToDoPage {
         }
     }
 
-    public String getItemLeftCount() {
-        return itemLeftCount.getText();
+    public void clickSpecificCheckbox(int specificCheckBox) {
+        List<WebElement> checkboxes = driver.findElements(By.xpath(ToDoXpathContents.LIST_CHECKBOXES));
+        checkboxes.get(specificCheckBox).click();
     }
 
-    public void doubleClickOnItem() {
+    public int getItemLeftCount() {
+        return Integer.parseInt(itemLeftCount.getText());
+    }
+
+    public void doubleClickOnItem(int clickedItem) {
         Actions actionItem = new Actions(driver);
         List<WebElement> listItems = driver.findElements(By.xpath(ToDoXpathContents.TODO_LIST_ITEM));
-        actionItem.moveToElement(listItems.get(3)).doubleClick().build().perform();
+        actionItem.moveToElement(listItems.get(clickedItem)).doubleClick().build().perform();
     }
 
-    public void editItem() {
-        this.doubleClickOnItem();
+    public String getTodoItemValue(int getTodoItemValue) {
+        List<WebElement> listItems = driver.findElements(By.xpath(ToDoXpathContents.TODO_LIST_ITEM));
+        return listItems.get(getTodoItemValue).getText();
+    }
+
+    public List<String> getItemValues() {
+        List<WebElement> listItems = driver.findElements(By.xpath(ToDoXpathContents.TODO_LIST_ITEM));
+        List<String> myList = new LinkedList<>();
+        for (WebElement listItem : listItems) {
+            myList.add(listItem.getText());
+        }
+        return myList;
+    }
+
+    public void editItem(int editItem,String editText) {
+        this.doubleClickOnItem(editItem);
         editToDoItem.sendKeys(Keys.chord(Keys.CONTROL, "a", Keys.DELETE));
-        editToDoItem.sendKeys("Edited test");
+        editToDoItem.sendKeys(editText);
         editToDoItem.sendKeys(Keys.ENTER);
     }
 
-    public void deleteItem(int deleteItem) {
-        List<WebElement> listItems = driver.findElements(By.xpath(ToDoXpathContents.LIST_ITEMS));
+    public void deleteToDoItem(int deleteItem) {
+        List<WebElement> listItems = driver.findElements(By.xpath(ToDoXpathContents.LIST_ITEMS_TODO));
         List<WebElement> deleteItems = driver.findElements(By.xpath(ToDoXpathContents.DELETE_ITEM));
         new Actions(driver)
                 .moveToElement(listItems.get(deleteItem))
                 .perform();
         deleteItems.get(deleteItem).click();
+    }
+
+    public void deleteCompletedItem(int deleteCompletedItem) {
+        List<WebElement> listItems = driver.findElements(By.xpath(ToDoXpathContents.LIST_ITEMS_COMPLETED));
+        List<WebElement> deleteItems = driver.findElements(By.xpath(ToDoXpathContents.DELETE_ITEM));
+        new Actions(driver)
+                .moveToElement(listItems.get(deleteCompletedItem))
+                .perform();
+        deleteItems.get(deleteCompletedItem).click();
+    }
+
+    public boolean visibilityOfFilterPanel(){
+       return driver.findElement(By.xpath(ToDoXpathContents.FILTER_PANEL)).isDisplayed();
     }
 }
