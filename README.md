@@ -19,17 +19,17 @@
 - Open IntelliJ idea
 - Open project
 
-<img src="./img/fileopen.png" style="zoom:50%;" />
+<img src="./img/fileopen.png" width="20%" />
 
 
 
 - There will be a popup. Select **Trust Project**
 
-  <img src="./img/TrustProject.png" style="zoom:50%;" />
+  <img src="./img/TrustProject.png" width="50%" />
 
 - Project structure looks like below image
 
-<img src="./img/Project.png" style="zoom:50%;" />
+<img src="./img/Project.png" width="20%" />
 
 # HOW TO RUN - STEPS 
 
@@ -39,7 +39,7 @@
 - Open Lifecycle
 - Select test (for more information refer to [Configuration with mvn test command](# Configuration with mvn test command) )
 
-<img src="./img/maven_Life_Cycle.png" style="zoom:50%;" />
+<img src="./img/maven_Life_Cycle.png" width="20%" />
 
 
 
@@ -51,7 +51,7 @@
 
 - Run XML file
 
-  <img src="./img/Run.png" style="zoom:50%;" />
+  <img src="./img/Run.png" width="25%" />
   
   
   
