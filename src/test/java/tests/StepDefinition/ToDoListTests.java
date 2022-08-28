@@ -64,8 +64,8 @@ public class ToDoListTests {
         Assert.assertTrue(actualData.size()>0);
     }
 
-    @Then("Refresh the page and check")
-    public void refresh_the_page_and_check(List<String> createdToDoItems) {
+    @Then("Refresh the page and check todo List")
+    public void refresh_the_page_and_check_todo_List(List<String> createdToDoItems) {
         driver.navigate().refresh();
         List<String> actualData = toDoPage.getItemValues();
         toDoPage.clickCompletedBtn();

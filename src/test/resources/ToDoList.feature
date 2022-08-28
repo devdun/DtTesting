@@ -17,7 +17,7 @@ Feature: todo list
       | Todo_item @CreateMultiple Test 1 |
       | Todo_item @CreateMultiple Test 2 |
       | Todo_item @CreateMultiple Test 3 |
-    Then Refresh the page and check
+    Then Refresh the page and check todo List
       | Todo_item @CreateMultiple Test 0 |
       | Todo_item @CreateMultiple Test 1 |
       | Todo_item @CreateMultiple Test 2 |
