@@ -15,11 +15,13 @@
 
 ### Setup
 
--  git clone https://github.com/devdun/DtTesting.git
+- git clone https://github.com/devdun/DtTesting.git
+
 - Open IntelliJ idea
+
 - Open project
 
-<img src="./img/fileopen.png" width="20%" />
+  <img src="./img/fileopen.png" width="20%" />
 
 
 
@@ -29,17 +31,19 @@
 
 - Project structure looks like below image
 
-<img src="./img/Project.png" width="20%" />
+  <img src="./img/Project.png" width="20%" />
 
 # HOW TO RUN - STEPS 
 
 >Option One
 
 - Open Project using IntelliJ idea
+
 - Open Lifecycle
+
 - Select test (for more information refer to [Configuration with mvn test command](# Configuration with mvn test command) )
 
-<img src="./img/maven_Life_Cycle.png" width="20%" />
+  <img src="./img/maven_Life_Cycle.png" width="20%" />
 
 
 
