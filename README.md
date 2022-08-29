@@ -29,7 +29,7 @@
 
   <img src="./img/TrustProject.png" width="50%" />
 
-- Project structure looks like below image
+- The project structure looks like the below image
 
   <img src="./img/Project.png" width="20%" />
 

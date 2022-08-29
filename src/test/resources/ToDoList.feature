@@ -64,17 +64,17 @@ Feature: todo list
     Then User tick 0 checkbox to complete ToDo item
     Then User delete an completed item 0
 
-    @AllActiveCompleted
-      Scenario: Verify user can see correct items under correct lists
-      When User Enter Todo item and press enter
-        | Todo_item @AllActiveCompleted Test 0 |
-        | Todo_item @AllActiveCompleted Test 1 |
-        | Todo_item @AllActiveCompleted Test 3 |
-        | Todo_item @AllActiveCompleted Test 4 |
-      Then User tick 0 checkbox to complete ToDo item
-      Then User navigate to "All" list and check count is 4
-      And User navigate to "Active" list and check count is 3
-      And User navigate to "Completed" list and check count is 1
+  @AllActiveCompleted
+  Scenario: Verify user can see correct items under correct lists
+    When User Enter Todo item and press enter
+      | Todo_item @AllActiveCompleted Test 0 |
+      | Todo_item @AllActiveCompleted Test 1 |
+      | Todo_item @AllActiveCompleted Test 3 |
+      | Todo_item @AllActiveCompleted Test 4 |
+    Then User tick 0 checkbox to complete ToDo item
+    Then User navigate to "All" list and check count is 4
+    And User navigate to "Active" list and check count is 3
+    And User navigate to "Completed" list and check count is 1
 
   @ClearCompletedItem
   Scenario: Verify can Clear completed ToDo items and item left count not affected
